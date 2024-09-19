@@ -5,15 +5,19 @@ export default function Resume() {
   const [activeTab, setActiveTab] = useState('skills')
   const [hoveredSkill, setHoveredSkill] = useState('')
 
+  const about = [
+    'I began my career as a design engineer in 2005. Since 2007, I have been working at an innovative packaging manufacturing company, advancing from a production preparation engineer to the position of Chief Technologist. I am a hardworking and passionate job seeker with strong organizational skills, eager to secure an entry-level Frontend Developer position. I am ready to help the team achieve company goals.',
+  ]
+
   const skills = [
     'JavaScript (ECMAScript 5+)',
-    'ReactJS, Typescript',
+    'ReactJS, TypeScript',
     'HTML5, CSS3',
     'Redux',
     'npm/yarn',
     'Git/GitHub/GitLab',
     'JSON',
-    'AJAX'
+    'AJAX',
   ]
 
   const experience = [
@@ -36,13 +40,15 @@ export default function Resume() {
       period: '2007 - 2022 FT Group LLC',
       items: [
         'Production Preparation Engineer 2007-2010',
-        'Cheif Technologyst 2010-2022'
+        'Chief Technologist 2010-2022',
+        'Supporting the technological process at a packaging manufacturing plant, color matching, creating color libraries, maintaining process documentation, coordinating personnel work, quality control.'
       ]
     },
     {
       period: '2005-2007 SKB UKRELECTROMASH',
       items: [
-        'Design engineer'
+        'Design engineer',
+        'Postgraduate internship. Developing technical drawings. Converting drawings to digital format'
       ]
     }
   ]
@@ -61,9 +67,9 @@ export default function Resume() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
         <div className="md:flex">
-          <div className="md:flex-shrink-0 bg-gray-700 text-white p-8 space-y-4">
+          <div className="md:w-1/3 bg-gray-700 text-white p-8 space-y-4">
             <motion.h1 
               className="text-3xl font-bold"
               initial={{ opacity: 0, y: -20 }}
@@ -87,7 +93,7 @@ export default function Resume() {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span>golosnyigor@gmail.com</span>
+                <a href="mailto:golosnyigor@gmail.com" className="hover:underline">golosnyigor@gmail.com</a>
               </div>
               <div className="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -124,13 +130,13 @@ export default function Resume() {
               </ul>
             </div>
           </div>
-          <div className="p-8 flex-grow">
+          <div className="md:w-2/3 p-8">
             <div className="space-y-6">
-              <div className="flex space-x-4">
+              <div className="flex flex-wrap gap-2">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 rounded ${activeTab === 'skills' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                  className={`px-4 py-2 rounded ${activeTab === 'skills' ? 'bg-gray-800 text-white' : 'bg-gray-200'}`}
                   onClick={() => setActiveTab('skills')}
                 >
                   Skills
@@ -138,7 +144,7 @@ export default function Resume() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 rounded ${activeTab === 'experience' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                  className={`px-4 py-2 rounded ${activeTab === 'experience' ? 'bg-gray-800 text-white' : 'bg-gray-200'}`}
                   onClick={() => setActiveTab('experience')}
                 >
                   Experience
@@ -146,7 +152,7 @@ export default function Resume() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 rounded ${activeTab === 'education' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                  className={`px-4 py-2 rounded ${activeTab === 'education' ? 'bg-gray-800 text-white' : 'bg-gray-200'}`}
                   onClick={() => setActiveTab('education')}
                 >
                   Education
@@ -162,7 +168,7 @@ export default function Resume() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-xl font-semibold text-gray-700">SKILLS AND KNOWLEDGE</h3>
-                    <div className="mt-4 grid grid-cols-2 gap-4">
+                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {skills.map((skill) => (
                         <motion.div
                           key={skill}
@@ -212,7 +218,7 @@ export default function Resume() {
                         <h4 className="font-semibold">{exp.period}</h4>
                         <ul className="list-disc list-inside">
                           {exp.items.map((item, i) => (
-                            <li key={i}>{item}</li>
+                            <li key={i} className="text-sm">{item}</li>
                           ))}
                         </ul>
                       </motion.div>
@@ -235,6 +241,7 @@ export default function Resume() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="text-sm"
                         >
                           <strong>{edu.year}:</strong> {edu.course}
                         </motion.li>
