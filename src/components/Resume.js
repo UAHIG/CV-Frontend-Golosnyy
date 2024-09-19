@@ -7,7 +7,10 @@ export default function Resume() {
   const [imgError, setImgError] = useState(false)
 
   const about = [
-    "I began my career as a design engineer in 2005. Since 2007, I have been working at an innovative packaging manufacturing company, advancing from a production preparation engineer to the position of Chief Technologist. I am a hardworking and passionate job seeker with strong organizational skills, eager to secure an entry-level Frontend Developer position. I am ready to help the team achieve company goals.",
+    "I began my career as a design engineer in 2005.",
+    "Since 2007, I have been working at an innovative packaging manufacturing company, advancing from a production preparation engineer to the position of Chief Technologist.",
+    "I am a hardworking and passionate job seeker with strong organizational skills, eager to secure an entry-level Frontend Developer position.",
+    "I am ready to help the team achieve company goals.",
   ]
 
   const skills = [
@@ -181,10 +184,6 @@ export default function Resume() {
               </div>
             </div>
             <div>
-              <h3 className='text-lg font-semibold'>ABOUT ME</h3>
-              <p className='mt-2 text-sm'>{about[0]}</p>
-            </div>
-            <div>
               <h3 className='text-lg font-semibold'>LANGUAGES</h3>
               <ul className='mt-2 text-sm'>
                 <li>English: Intermediate (keep studying)</li>
@@ -207,6 +206,17 @@ export default function Resume() {
                   }`}
                   onClick={() => setActiveTab("skills")}>
                   Skills
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-4 py-2 rounded ${
+                    activeTab === "about"
+                      ? "bg-gray-800 text-white"
+                      : "bg-gray-200"
+                  }`}
+                  onClick={() => setActiveTab("about")}>
+                  About Me
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -271,6 +281,38 @@ export default function Resume() {
                       <li>Webpack</li>
                       <li>Chrome Dev Tools</li>
                     </ul>
+                  </motion.div>
+                )}
+                {activeTab === "about" && (
+                  <motion.div
+                    key='about'
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}>
+                    <h3 className='text-xl font-semibold text-gray-700'>
+                      ABOUT ME
+                    </h3>
+                    <div className='mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                      {about.map((about) => (
+                        <motion.div
+                          key={about}
+                          className='bg-gray-100 p-2 rounded relative overflow-hidden'
+                          whileHover={{ scale: 1.05 }}
+                          onHoverStart={() => setHoveredSkill(about)}
+                          onHoverEnd={() => setHoveredSkill("")}>
+                          {about}
+                          {hoveredSkill === about && (
+                            <motion.div
+                              className='absolute inset-0 bg-blue-500 opacity-20'
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ duration: 0.2 }}
+                            />
+                          )}
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
                 {activeTab === "experience" && (
