@@ -1,70 +1,37 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Library-LandingPage
+---
+## About
+#### Adaptive landing page with JS logic and UI that using local storage
+---
+## Project Link:
 
-## Available Scripts
+- :link: [![Git Bage](https://img.shields.io/badge/-LibraryLandingPage-green?style=plastic&logo=googlechrome&logoColor=red)](https://uahig.github.io/Library-LandingPage/)
 
-In the project directory, you can run:
+---
+<img width="954" alt="Screenshot 2023-10-24 at 14 53 58" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/79e99ac5-0616-420e-bcf1-6c78e30b5304">
+<img width="954" alt="Screenshot 2023-10-24 at 14 55 25" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/fa7a060e-5a39-441d-9b6d-a7579225fcde">
+<img width="954" alt="Screenshot 2023-10-24 at 14 55 54" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/c7870247-0f55-4ab2-b638-9af83de9079c">
+<img width="954" alt="Screenshot 2023-10-24 at 14 56 01" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/b0480a7b-f852-42e4-9d14-aa0673e9042a">
+<img width="467" alt="Screenshot 2023-10-24 at 14 57 01" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/c935e4ba-dfa1-404a-8782-bca96a8fe567">
+<img width="588" alt="Screenshot 2023-10-24 at 14 57 50" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/51a3b216-65e3-4571-b39c-0903216ea418">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- <p align="center">
+      <img src="Project Logo Url" width="726">
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+   <img src="" alt="Unity Version">
+   <img src="" alt="Game Version">
+   <img src="" alt="License">
+</p> -->
+---
+## Developer:
+- :floppy_disk: **Github**: [![Git Bage](https://img.shields.io/badge/-UAHIG-red?style=plastic&logo=Github&logoColor=black)](https://github.com/UAHIG)
+---
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ## License -->
