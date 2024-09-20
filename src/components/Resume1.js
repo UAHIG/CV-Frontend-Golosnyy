@@ -1,12 +1,20 @@
-// Компонент без анимации
+// Компонент с анимацией пятна
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Resume() {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+  const [isMoving, setIsMoving] = useState(false)
   const [activeTab, setActiveTab] = useState("skills")
   const [hoveredSkill, setHoveredSkill] = useState("")
   const [imgError, setImgError] = useState(false)
+
+  // Функция для обновления координат курсора
+  const handleMouseMove = (event) => {
+    setCursorPosition({ x: event.clientX, y: event.clientY })
+    setIsMoving(true)
+  }
 
   const about = [
     "I began my career as a design engineer in 2005.",
@@ -90,8 +98,29 @@ export default function Resume() {
     },
   ]
 
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-800 to-gray-400 py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='relative overflow-hidden h-screen bg-gray-100'>
+      {/* Анимация облака следования за курсором */}
+      <motion.div
+        className='absolute w-60 h-60 rounded-full bg-blue-100 opacity-100 pointer-events-none'
+        style={{
+          translateX: cursorPosition.x - 340,
+          translateY: cursorPosition.y - 400,
+          filter: isMoving ? "blur(70px)" : "blur(100px)",
+        }}
+        animate={{ x: cursorPosition.x - 30, y: cursorPosition.y - 30 }}
+        transition={{ type: "spring", stiffness: 2, damping: 0 }}
+        onAnimationComplete={() => setIsMoving(false)}
+      />
+      {/* Контент */}
+      <div className='min-h-screen bg-gradient-to-br from-gray-800 to-gray-400 py-12 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden'>
         <div className='md:flex'>
           <div className='md:w-1/3 bg-gradient-to-br from-gray-700 to-gray-900 text-white p-8 space-y-4'>
@@ -374,6 +403,12 @@ export default function Resume() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+      <div className='p-10'>
+        <h1 className='text-4xl font-bold mt-4 text-center'>IGOR GOLOSNYY</h1>
+        <p className='mt-4 text-center'>Frontend Developer</p>
+        {/* Дополнительный контент */}
       </div>
     </div>
   )
