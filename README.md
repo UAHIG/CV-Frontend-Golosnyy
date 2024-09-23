@@ -6,7 +6,7 @@
 ---
 ## Project Link:
 
-- :link: [![Git Bage](https://img.shields.io/badge/-CV-Frontend-Golosnyy-green?style=plastic&logo=googlechrome&logoColor=red)](https://uahig.github.io/CV-Frontend-Golosnyy/) 
+- :link: [![Git Bage](https://img.shields.io/badge/-CVFrontendGolosnyy-green?style=plastic&logo=googlechrome&logoColor=red)](https://uahig.github.io/CV-Frontend-Golosnyy/) 
 
 ---
 
