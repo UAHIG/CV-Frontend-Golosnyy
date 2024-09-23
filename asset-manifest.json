@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CV-Frontend-Golosnyy/static/css/main.990ccb43.css",
+    "main.js": "/CV-Frontend-Golosnyy/static/js/main.9a0cb17a.js",
+    "index.html": "/CV-Frontend-Golosnyy/index.html",
+    "main.990ccb43.css.map": "/CV-Frontend-Golosnyy/static/css/main.990ccb43.css.map",
+    "main.9a0cb17a.js.map": "/CV-Frontend-Golosnyy/static/js/main.9a0cb17a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.990ccb43.css",
+    "static/js/main.9a0cb17a.js"
+  ]
+}
