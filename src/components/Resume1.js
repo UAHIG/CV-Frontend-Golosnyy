@@ -106,7 +106,7 @@ export default function Resume() {
   }, [])
 
   return (
-    <div className='relative overflow-hidden h-screen bg-gray-100'>
+    <div className='relative overflow-hidden min-h-screen bg-gray-100'>
       {/* Анимация облака следования за курсором */}
       <motion.div
         className='absolute w-60 h-60 rounded-full bg-blue-100 opacity-100 pointer-events-none'
@@ -128,7 +128,10 @@ export default function Resume() {
               <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center bg-gray-100'>
                 {!imgError ? (
                   <img
-                    src='/Photo.png'
+                    // src='/Photo.png'
+                    // Не работал путь. Проблемы с загруузкой. Применена новая схема:
+                    
+                    src={`${process.env.PUBLIC_URL}/Photo.png`}
                     alt='IG'
                     className='w-full h-full object-cover'
                     onError={() => setImgError(true)}
@@ -405,11 +408,6 @@ export default function Resume() {
         </div>
       </div>
     </div>
-      <div className='p-10'>
-        <h1 className='text-4xl font-bold mt-4 text-center'>IGOR GOLOSNYY</h1>
-        <p className='mt-4 text-center'>Frontend Developer</p>
-        {/* Дополнительный контент */}
-      </div>
     </div>
   )
 }
