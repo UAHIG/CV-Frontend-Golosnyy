@@ -1,20 +1,17 @@
 
-# Library-LandingPage
+# CV-Frontend-Golosnyy
 ---
 ## About
-#### Adaptive landing page with JS logic and UI that using local storage
+#### Adaptive CV page with that was created using REACT and Thailwind CSS in 15 min with "V0.dev" AI platform and "a little bit my hands" to test it.
 ---
 ## Project Link:
 
-- :link: [![Git Bage](https://img.shields.io/badge/-LibraryLandingPage-green?style=plastic&logo=googlechrome&logoColor=red)](https://uahig.github.io/Library-LandingPage/)
+- :link: [![Git Bage](https://img.shields.io/badge/-LibraryLandingPage-green?style=plastic&logo=googlechrome&logoColor=red)](https://uahig.github.io/CV-Frontend-Golosnyy/) 
 
 ---
-<img width="954" alt="Screenshot 2023-10-24 at 14 53 58" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/79e99ac5-0616-420e-bcf1-6c78e30b5304">
-<img width="954" alt="Screenshot 2023-10-24 at 14 55 25" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/fa7a060e-5a39-441d-9b6d-a7579225fcde">
-<img width="954" alt="Screenshot 2023-10-24 at 14 55 54" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/c7870247-0f55-4ab2-b638-9af83de9079c">
-<img width="954" alt="Screenshot 2023-10-24 at 14 56 01" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/b0480a7b-f852-42e4-9d14-aa0673e9042a">
-<img width="467" alt="Screenshot 2023-10-24 at 14 57 01" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/c935e4ba-dfa1-404a-8782-bca96a8fe567">
-<img width="588" alt="Screenshot 2023-10-24 at 14 57 50" src="https://github.com/UAHIG/Library-LandingPage/assets/122532676/51a3b216-65e3-4571-b39c-0903216ea418">
+
+<img width="771" alt="Screenshot 2024-09-23 at 18 33 36" src="https://github.com/user-attachments/assets/c049444e-e00f-45b9-bde9-fabe54247886">
+<img width="325" alt="Screenshot 2024-09-23 at 18 34 10" src="https://github.com/user-attachments/assets/80aa9ff0-75b0-4d04-a2b3-b11da5070faf">
 
 
 <!-- <p align="center">
