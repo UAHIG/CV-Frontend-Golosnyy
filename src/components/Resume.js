@@ -1,18 +1,26 @@
-// Компонент без анимации
+// Компонент с анимацией пятна
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Resume() {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+  const [isMoving, setIsMoving] = useState(false)
   const [activeTab, setActiveTab] = useState("skills")
   const [hoveredSkill, setHoveredSkill] = useState("")
   const [imgError, setImgError] = useState(false)
 
+  // Функция для обновления координат курсора
+  const handleMouseMove = (event) => {
+    setCursorPosition({ x: event.clientX, y: event.clientY })
+    setIsMoving(true)
+  }
+
   const about = [
     "I began my career as a design engineer in 2005.",
-    "Since 2007, I have been working at an innovative packaging manufacturing company, advancing from a production preparation engineer to the position of Chief Technologist.",
-    "I am a hardworking and passionate job seeker with strong organizational skills, eager to secure an entry-level Frontend Developer position.",
-    "I am ready to help the team achieve company goals.",
+    "Between 2007 and 2022, I advanced from Production Preparation Engineer to Chief Technologist at an innovative packaging company.",
+    "I am a dedicated and passionate professional with strong organizational skills, eager to secure a Frontend Developer position.",
+    "I am ready to join the team and contribute to achieving company goals.",
   ]
 
   const skills = [
@@ -90,8 +98,29 @@ export default function Resume() {
     },
   ]
 
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-800 to-gray-400 py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='max-w-7xl mx-auto relative overflow-hidden min-h-screen bg-gray-100'>
+      {/* Анимация облака следования за курсором */}
+      <motion.div
+        className='absolute w-60 h-60 rounded-full bg-blue-100 opacity-100 pointer-events-none'
+        style={{
+          translateX: cursorPosition.x - 340,
+          translateY: cursorPosition.y - 400,
+          filter: isMoving ? "blur(70px)" : "blur(100px)",
+        }}
+        animate={{ x: cursorPosition.x - 30, y: cursorPosition.y - 30 }}
+        transition={{ type: "spring", stiffness: 2, damping: 0 }}
+        onAnimationComplete={() => setIsMoving(false)}
+      />
+      {/* Контент */}
+      <div className='min-h-screen bg-gradient-to-br from-gray-800 to-gray-400 py-12 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-6xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden'>
         <div className='md:flex'>
           <div className='md:w-1/3 bg-gradient-to-br from-gray-700 to-gray-900 text-white p-8 space-y-4'>
@@ -99,7 +128,10 @@ export default function Resume() {
               <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center bg-gray-100'>
                 {!imgError ? (
                   <img
-                    src='/Photo.png'
+                    // src='/Photo.png'
+                    // Не работал путь. Проблемы с загруузкой. Применена новая схема:
+                    
+                    src={`${process.env.PUBLIC_URL}/Photo.png`}
                     alt='IG'
                     className='w-full h-full object-cover'
                     onError={() => setImgError(true)}
@@ -376,5 +408,9 @@ export default function Resume() {
         </div>
       </div>
     </div>
+    </div>
   )
 }
+
+
+

@@ -1,10 +1,10 @@
 import './App.css';
-import Resume1 from './components/Resume1.js';
+import Resume from './components/Resume.js';
 
 function App() {
   return (
     <div className="App">
-      <Resume1/>
+      <Resume />
     </div>
   );
 }
