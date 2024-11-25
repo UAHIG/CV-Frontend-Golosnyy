@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/CV-Frontend-Golosnyy/static/css/main.54b3dc66.css",
-    "main.js": "/CV-Frontend-Golosnyy/static/js/main.d708b1d5.js",
+    "main.js": "/CV-Frontend-Golosnyy/static/js/main.68a92b88.js",
     "index.html": "/CV-Frontend-Golosnyy/index.html",
     "main.54b3dc66.css.map": "/CV-Frontend-Golosnyy/static/css/main.54b3dc66.css.map",
-    "main.d708b1d5.js.map": "/CV-Frontend-Golosnyy/static/js/main.d708b1d5.js.map"
+    "main.68a92b88.js.map": "/CV-Frontend-Golosnyy/static/js/main.68a92b88.js.map"
   },
   "entrypoints": [
     "static/css/main.54b3dc66.css",
-    "static/js/main.d708b1d5.js"
+    "static/js/main.68a92b88.js"
   ]
 }
