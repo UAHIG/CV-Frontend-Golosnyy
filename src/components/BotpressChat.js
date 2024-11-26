@@ -31,6 +31,7 @@ const BotpressChat = () => {
           closeOnEscape: true,
           disableNotificationSound: false,
           showCloseButton: true,
+          clientId: "89f9fb7b-92fd-4ae3-a6c3-820276793b9f",
         });
       } else {
         console.error("Botpress WebChat не загружен. Проверьте inject.js.");
