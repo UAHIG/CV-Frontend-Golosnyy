@@ -25,6 +25,7 @@ const BotpressChat = () => {
             primaryColor: "#4caf50",
             backgroundColor: "#f5f5f5",
           },
+          
           enableReset: true,
           showPoweredBy: false,
           showTimestamp: true,
