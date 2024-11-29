@@ -1,53 +1,50 @@
-
 import { useEffect } from "react";
 
 const BotpressChat = () => {
   useEffect(() => {
-    // Подключение inject.js
-    const injectScript = document.createElement("script");
-    injectScript.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
-    injectScript.async = true;
-    document.body.appendChild(injectScript);
+    // Проверка, чтобы не дублировать скрипты
+    const injectScript = document.querySelector('script[src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"]');
+    if (!injectScript) {
+      const script = document.createElement("script");
+      script.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
+      script.async = true;
+      document.body.appendChild(script);
 
-    // Подключение кастомного скрипта (если он содержит вашу конфигурацию)
-    const customScript = document.createElement("script");
-    customScript.src = "https://files.bpcontent.cloud/2024/11/22/17/20241122172808-AI8GXOF7.js";
-    customScript.async = true;
-    document.body.appendChild(customScript);
+      script.onload = () => {
+        if (window.botpress) {
+          window.botpress.init({
+            botId: "cb1336c0-89fb-462e-9d97-a3360d2cee69",
+            configuration: {
+              botName: "MY-CV-bot",
+              botAvatar: "https://files.bpcontent.cloud/2024/11/25/09/20241125094227-W9FFJQZJ.png",
+              botDescription: "Ask any info about me",
+              color: "#333f51",
+              variant: "solid",
+              themeMode: "dark",
+              fontFamily: "inter",
+              radius: 1,
+              additionalStylesheetUrl: "https://files.bpcontent.cloud/2024/11/27/15/20241127153959-DVL8J0J2.css"
+            },
+            clientId: "89f9fb7b-92fd-4ae3-a6c3-820276793b9f"
+          });
+        } else {
+          console.error("Botpress WebChat не загружен. Проверьте inject.js.");
+        }
+      };
 
-    // После загрузки inject.js инициализируем бот
-    injectScript.onload = () => {
-      if (window.botpress) {
-        window.botpress.init({
-          botId: "cb1336c0-89fb-462e-9d97-a3360d2cee69", // Укажите ваш Bot ID
-          hostUrl: "https://cdn.botpress.cloud/webchat/v2.2/inject.js", // Например, http://localhost:3000 или https://your-domain.com
-          customStyle: {
-            primaryColor: "#4caf50",
-            backgroundColor: "#f5f5f5",
-          },
-          
-          enableReset: true,
-          showPoweredBy: false,
-          showTimestamp: true,
-          closeOnEscape: true,
-          disableNotificationSound: false,
-          showCloseButton: true,
-        });
-      } else {
-        console.error("Botpress WebChat не загружен. Проверьте inject.js.");
-      }
-    };
+      script.onerror = () => console.error("Не удалось загрузить inject.js.");
+    }
 
-    // Удаляем скрипты при размонтировании компонента
+    // Удаляем скрипт при размонтировании
     return () => {
-      document.body.removeChild(injectScript);
-      document.body.removeChild(customScript);
+      const existingScript = document.querySelector('script[src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
     };
   }, []);
 
-  return null; // Ничего не рендерим, чат появится сам
+  return null; // Чат появится автоматически
 };
 
 export default BotpressChat;
-
-
